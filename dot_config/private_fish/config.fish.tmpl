@@ -1,0 +1,44 @@
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+    if type -q starship
+        starship init fish | source
+    end
+    if type -q zoxide
+        zoxide init fish | source
+    end
+
+    set -gx EDITOR nvim
+
+    # proxy
+    set -gx HOST_IP 127.0.0.1
+    function proxy
+        set -gx ALL_PROXY socks5://$HOST_IP:10808
+    end
+    function unproxy
+        set -e ALL_PROXY
+    end
+
+    # alias
+    safe_alias sourcerc source $HOME/.config/fish/config.fish
+    safe_alias eza "eza --icons --color-scale=age --git"
+    safe_alias ls eza
+    safe_alias l ls -al
+    safe_alias ll ls -l
+    safe_alias cat bat
+    safe_alias ca cargoc
+    safe_alias rsc rustc
+    safe_alias rsup rustup
+    safe_alias czi chezmoi
+    safe_alias --no-wraps czia "chezmoi edit --apply"
+    safe_alias ya yazi
+    safe_alias lzg lazygit
+
+end
+
+# pnpm
+{{- $pnpmHome := printf "%s/.local/share/pnpm" .chezmoi.homeDir }}
+set -gx PNPM_HOME "{{ $pnpmHome }}"
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
