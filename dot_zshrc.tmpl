@@ -43,14 +43,22 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+export EDITOR=nvim
+
 # aliases
 alias sourcerc="source ~/.zshrc"
-alias ls=lsd
+alias eza="eza --icons --color-scale=age --git"
+alias ls=eza
+alias l="ls -al"
+alias ll="ls -l"
 alias cat=bat
 alias ca=cargo
 alias rsc=rustc
 alias rsup=rustup
 alias czi=chezmoi
+alias czia="chezmoi edit --apply"
+alias ya=yazi
+alias lzg=lazygit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

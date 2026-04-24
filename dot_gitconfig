@@ -1,6 +1,7 @@
 [core]
 	editor = nvim
 	autocrlf = input
+	pager = delta
 [user]
 	name = xiamu
 	email = myjyixi@163.com
@@ -20,3 +21,12 @@
 	ps = push
 	s = status
 	ss = status -s
+	unstage = reset HEAD --
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	dark = true
+	side-by-side = true
+[merge]
+	conflictStyle = zdiff3
