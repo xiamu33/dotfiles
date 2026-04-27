@@ -1,0 +1,14 @@
+# fish runtime/state files (machine-specific)
+.config/fish/fish_variables
+
+# ignore generated files by default
+.config/fish/completions/*
+.config/fish/functions/*
+.config/fish/conf.d/*
+
+# keep hand-written files under version control
+!.config/fish/functions/safe_alias.fish
+!.config/fish/conf.d/20-homebrew.fish
+!.config/fish/conf.d/90-aliases-loader.fish
+!.config/fish/conf.d/fnm.fish
+!.config/fish/conf.d/rustup.fish
