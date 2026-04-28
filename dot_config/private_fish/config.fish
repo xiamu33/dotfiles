@@ -26,6 +26,7 @@ if status is-interactive
     safe_alias ll ls -l
     safe_alias lt l --tree --git-ignore
     safe_alias cat bat
+    safe_alias pn pnpm
     safe_alias ca cargo
     safe_alias rsc rustc
     safe_alias rsup rustup
