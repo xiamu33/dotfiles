@@ -33,6 +33,8 @@ abbr -a gdca "git diff --cached"
 abbr -a gdcw "git diff --cached --word-diff"
 abbr -a gds "git diff --staged"
 
+abbr -a glg "git lg"
+
 abbr -a gl "git pull"
 abbr -a gpr "git pull -r"
 abbr -a gpra "git pull -r --autostash"
