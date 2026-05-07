@@ -34,6 +34,7 @@ if status is-interactive
     safe_alias --no-wraps czia "chezmoi edit --apply"
     safe_alias ya yazi
     safe_alias lzg lazygit
+    safe_alias zlj zellij
 
 end
 
