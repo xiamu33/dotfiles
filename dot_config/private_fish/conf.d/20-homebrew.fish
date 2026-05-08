@@ -16,4 +16,9 @@ if test -n "$__brew_bin"
     if test -d $__brew_comp; and not contains -- $__brew_comp $fish_complete_path
         set -g fish_complete_path $__brew_comp $fish_complete_path
     end
+
+    set -gx HOMEBREW_BREW_GIT_REMOTE https://mirrors.ustc.edu.cn/brew.git
+    set -gx HOMEBREW_CORE_GIT_REMOTE https://mirrors.ustc.edu.cn/homebrew-core.git
+    set -gx HOMEBREW_API_DOMAIN https://mirrors.ustc.edu.cn/homebrew-bottles/api
+    set -gx HOMEBREW_BOTTLE_DOMAIN https://mirrors.ustc.edu.cn/homebrew-bottles
 end

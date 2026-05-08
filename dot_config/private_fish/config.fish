@@ -8,6 +8,12 @@ if status is-interactive
     end
 
     set -gx EDITOR nvim
+    if type -q less
+        set -gx LESS -R
+    end
+    if type -q delta
+        set -gx DELTA_PAGER less -R
+    end
 
     # proxy
     set -gx HOST_IP 127.0.0.1
@@ -40,6 +46,9 @@ end
 
 # pnpm
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
+if not string match -q -- "$PNPM_HOME/bin" $PATH
+    set -gx PATH "$PNPM_HOME/bin" $PATH
+end
 if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
