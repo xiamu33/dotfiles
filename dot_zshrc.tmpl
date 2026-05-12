@@ -79,6 +79,8 @@ unproxy() {
 
 eval "$(zoxide init zsh)"
 
+eval "$(atuin init zsh)"
+
 # pnpm
 {{- $pnpmHome := printf "%s/.local/share/pnpm" .chezmoi.homeDir }}
 export PNPM_HOME="{{ $pnpmHome }}"
